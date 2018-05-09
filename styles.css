@@ -2,3 +2,24 @@ body {
 	text-align: center;
 	background-color: grey;
 }
+
+input {
+	margin: 50px;
+}
+#hold {
+	
+}
+#holder {
+	float: left;
+	width: 300px;
+	background-color: #5e6b6b;
+	margin-bottom: 2px;
+}
+img {
+	width: 300px;
+	margin-top: 25px;
+}
+
+h2 {
+	max-height: 27px;
+}
