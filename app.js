@@ -12,9 +12,10 @@ $.ajax({
     console.log(concerts)
     for (let i = 0; i < concerts.length; i++) {
       let source = concerts[i]
+      tickTock = cleanTime(source["dateOfShow"])
       document.getElementById("hold").innerHTML += "<div id='holder'> <h2>" + source["eventDateName"] + "</h2> <img src=" + 
                                                    source["imageSource"]+"> <p>" + source["eventHallName"] + "<br>" +
-                                                   source["dateOfShow"] +  "</div>"
+                                                   tickTock[0] + "<br>" + tickTock[1] + "</div>"
     };
   }
 });
@@ -33,9 +34,13 @@ function leita() {
             child[i].style.display = "none";
 
         }
-    }
-}
+    };
+};
 
 function cleanTime(tick){
-
+  let dateTime = tick.split("T");
+  let date = dateTime[0].split("-")
+  let dateString = date[2] + '/' + date[1] + "/" + date[0]
+  let timeString = dateTime[1].slice(0,5)
+  return [dateString, timeString]
 };
